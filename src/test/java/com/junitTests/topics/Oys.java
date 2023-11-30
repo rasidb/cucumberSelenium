@@ -5,7 +5,6 @@ import com.utilities.ConfigurationReader;
 import com.utilities.Driver;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -54,10 +53,11 @@ public class Oys {
         WebElement kodluBakım = Driver.getDriver().findElement(By.xpath("//span[.='Kodlu Bakım']"));
         wait.until(ExpectedConditions.elementToBeClickable(kodluBakım)).click();
         while (true) {
-            WebElement sorularSayfası = Driver.getDriver().findElement(By.xpath("//div[@class='x-grid3-cell-inner x-grid3-col-id']//img"));
+            WebElement sorularSayfası;
             try {
+                sorularSayfası = Driver.getDriver().findElement(By.xpath("//div[@class='x-grid3-cell-inner x-grid3-col-id']//img"));
                 wait.until(ExpectedConditions.elementToBeClickable(sorularSayfası)).click();
-            } catch (StaleElementReferenceException e) {
+            } catch (Exception e) {
                 sorularSayfası = Driver.getDriver().findElement(By.xpath("//div[@class='x-grid3-cell-inner x-grid3-col-id']//img"));
                 wait.until(ExpectedConditions.elementToBeClickable(sorularSayfası)).click();
             }
