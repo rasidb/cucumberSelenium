@@ -1,6 +1,6 @@
 package com.stepDefinitions;
 
-import com.pom.PracticeForm_pom;
+import com.pages.PracticeForm_page;
 import com.utilities.BrowserUtils;
 import com.utilities.Driver;
 import io.cucumber.java.en.And;
@@ -18,7 +18,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
-public class PracticeForm_stepDefinition extends PracticeForm_pom {
+public class PracticeForm_stepDefinition extends PracticeForm_page {
 
     @Given("the user is on the main page")
     public void the_user_is_on_the_main_page() {

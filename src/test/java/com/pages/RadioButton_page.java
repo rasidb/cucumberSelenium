@@ -1,4 +1,4 @@
-package com.pom;
+package com.pages;
 
 import com.utilities.BrowserUtils;
 import com.utilities.Driver;
@@ -7,21 +7,20 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class UploadAndDownload_pom {
-    public UploadAndDownload_pom() {
+public class RadioButton_page {
+    public RadioButton_page() {
         Driver.getDriver().get("https://demoqa.com/");
         WebElement element = Driver.getDriver().findElement(By.xpath("//h5[.='Elements']"));
         BrowserUtils.scrollByJs(element);
         element.click();
         PageFactory.initElements(Driver.getDriver(), this);
     }
-
-    @FindBy(id = "downloadButton")
-    public WebElement downloadButton;
-    @FindBy(id = "uploadFile")
-    public WebElement uploadFile;
-    @FindBy(id = "uploadedFilePath")
-    public WebElement uploadedFilePath;
-
-
+    @FindBy(id = "yesRadio")
+    public WebElement radioBtnYes;
+    @FindBy(id = "impressiveRadio")
+    public WebElement impressiveRadio;
+    @FindBy(id = "noRadio")
+    public WebElement noRadio;
+    @FindBy(xpath = "//span[@class='text-success']")
+    public WebElement radioText;
 }

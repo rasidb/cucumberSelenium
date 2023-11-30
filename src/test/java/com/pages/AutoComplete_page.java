@@ -1,16 +1,13 @@
-package com.pom;
+package com.pages;
 
-import com.stepDefinitions.AutoComplete_stepDefinition;
 import com.utilities.Driver;
-import io.cucumber.java.bs.A;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class AutoComplete_pom {
-    public AutoComplete_pom() {
+public class AutoComplete_page {
+    public AutoComplete_page() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 

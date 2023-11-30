@@ -1,6 +1,6 @@
 package com.stepDefinitions;
 
-import com.pom.Frames_pom;
+import com.pages.Frames_page;
 import com.utilities.BrowserUtils;
 import com.utilities.Driver;
 import io.cucumber.java.en.And;
@@ -10,7 +10,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 
-public class Frames_stepDefinition extends Frames_pom {
+public class Frames_stepDefinition extends Frames_page {
     @Given("I open the main page")
     public void ı_open_the_main_page() {
         BrowserUtils.setupDemoqaMenu("Alerts, Frame & Windows");

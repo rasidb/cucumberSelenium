@@ -1,21 +1,18 @@
 package com.stepDefinitions;
 
-import com.pom.ButtonsActions_pom;
+import com.pages.ButtonsActions_page;
 import com.utilities.BrowserUtils;
 import com.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import org.junit.Before;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ButtonsActions_stepDefinition extends ButtonsActions_pom {
+public class ButtonsActions_stepDefinition extends ButtonsActions_page {
     @Given("user clicks Buttons button")
     public void userClicksButtonsButton() {
      BrowserUtils.setupDemoqaMenu("Elements");

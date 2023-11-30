@@ -1,6 +1,6 @@
 package com.stepDefinitions;
 
-import com.pom.ModalDialogs_pom;
+import com.pages.ModalDialogs_page;
 import com.utilities.BrowserUtils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -8,7 +8,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 
-public class ModalDialogs_stepDefinition extends ModalDialogs_pom {
+public class ModalDialogs_stepDefinition extends ModalDialogs_page {
     @Given("I navigate to the Modal Dialogs page")
     public void ı_navigate_to_the_modal_dialogs_page() {
         BrowserUtils.setupDemoqaMenu("Alerts, Frame & Windows");

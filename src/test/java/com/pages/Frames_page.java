@@ -1,12 +1,12 @@
-package com.pom;
+package com.pages;
 
 import com.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Frames_pom {
-    public Frames_pom(){
+public class Frames_page {
+    public Frames_page(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
     @FindBy(xpath = "//span[.='Frames']")

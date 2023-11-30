@@ -1,14 +1,13 @@
-package com.pom;
+package com.pages;
 
 import com.utilities.Driver;
-import io.cucumber.java.bs.A;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Alerts_pom {
+public class Alerts_page {
 
-    public Alerts_pom() {
+    public Alerts_page() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 

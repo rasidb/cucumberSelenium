@@ -1,6 +1,6 @@
 package com.stepDefinitions;
 
-import com.pom.RadioButton_pom;
+import com.pages.RadioButton_page;
 import com.utilities.BrowserUtils;
 import com.utilities.Driver;
 import io.cucumber.java.en.Given;
@@ -8,7 +8,6 @@ import io.cucumber.java.en.Then;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotInteractableException;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -16,7 +15,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 
-public class RadioButton_stepDefinition extends RadioButton_pom {
+public class RadioButton_stepDefinition extends RadioButton_page {
     @Given("user clicks Radio Button button")
     public void userClicksRadioButtonButton() {
         BrowserUtils.setupDemoqaMenu("Elements");

@@ -1,9 +1,8 @@
 package com.stepDefinitions;
 
-import com.pom.BrowserWindows_pom;
+import com.pages.BrowserWindows_page;
 import com.utilities.BrowserUtils;
 import com.utilities.Driver;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -12,7 +11,7 @@ import org.junit.Assert;
 
 import java.util.Set;
 
-public class BrowserWindows_stepDefinition extends BrowserWindows_pom {
+public class BrowserWindows_stepDefinition extends BrowserWindows_page {
     @Given("the user opens the website")
     public void the_user_opens_the_website() {
         BrowserUtils.setupDemoqaMenu("Alerts, Frame & Windows");

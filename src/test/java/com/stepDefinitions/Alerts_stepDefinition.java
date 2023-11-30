@@ -1,6 +1,6 @@
 package com.stepDefinitions;
 
-import com.pom.Alerts_pom;
+import com.pages.Alerts_page;
 import com.utilities.BrowserUtils;
 import com.utilities.Driver;
 import io.cucumber.java.en.Given;
@@ -11,7 +11,7 @@ import org.junit.Assert;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Alerts_stepDefinition extends Alerts_pom {
+public class Alerts_stepDefinition extends Alerts_page {
     @Given("the user is on the alert page")
     public void the_user_is_on_the_alert_page() {
 

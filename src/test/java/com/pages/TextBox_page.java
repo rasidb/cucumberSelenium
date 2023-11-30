@@ -1,4 +1,4 @@
-package com.pom;
+package com.pages;
 
 import com.utilities.BrowserUtils;
 import com.utilities.Driver;
@@ -7,8 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class TextBox_pom {
-    public TextBox_pom() {
+public class TextBox_page {
+    public TextBox_page() {
         Driver.getDriver().get("https://demoqa.com/");
         WebElement element = Driver.getDriver().findElement(By.xpath("//h5[.='Elements']"));
         BrowserUtils.scrollByJs(element);

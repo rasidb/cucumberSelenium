@@ -1,13 +1,12 @@
 package com.stepDefinitions;
 
-import com.pom.ChecBox_pom;
+import com.pages.ChecBox_page;
 import com.utilities.BrowserUtils;
 import com.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -18,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 import static org.junit.Assert.assertEquals;
 
 
-public class CheckBox_stepDefinition extends ChecBox_pom {
+public class CheckBox_stepDefinition extends ChecBox_page {
     @Given("user clicks Check Box button")
     public void userClicksCheckBoxButton() {
         BrowserUtils.setupDemoqaMenu("Elements");

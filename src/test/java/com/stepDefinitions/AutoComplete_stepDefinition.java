@@ -1,26 +1,17 @@
 package com.stepDefinitions;
 
-import com.pom.AutoComplete_pom;
+import com.pages.AutoComplete_page;
 import com.utilities.BrowserUtils;
 import com.utilities.Driver;
-import io.cucumber.java.bs.A;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 
 import org.junit.Assert;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
-
-import java.security.Key;
 import java.util.concurrent.TimeUnit;
 
-public class AutoComplete_stepDefinition extends AutoComplete_pom {
+public class AutoComplete_stepDefinition extends AutoComplete_page {
     @Given("user clicks widgets menu")
     public void user_clicks_widgets_menu() {
         BrowserUtils.setupDemoqaMenu("Widgets");

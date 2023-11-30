@@ -1,6 +1,6 @@
 package com.stepDefinitions;
 
-import com.pom.DatePicker_pom;
+import com.pages.DatePicker_page;
 import com.utilities.BrowserUtils;
 import com.utilities.Driver;
 import io.cucumber.java.en.And;
@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
-public class DatePicker_stepDefinition extends DatePicker_pom {
+public class DatePicker_stepDefinition extends DatePicker_page {
     @Given("user open date picker menu")
     public void user_open_date_picker_menu() {
         BrowserUtils.setupDemoqaMenu("Widgets");

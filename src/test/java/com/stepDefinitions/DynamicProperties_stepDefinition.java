@@ -1,6 +1,6 @@
 package com.stepDefinitions;
 
-import com.pom.DynamicProperties_pom;
+import com.pages.DynamicProperties_page;
 import com.utilities.BrowserUtils;
 import com.utilities.Driver;
 import io.cucumber.java.en.And;
@@ -9,11 +9,10 @@ import io.cucumber.java.en.Then;
 import org.junit.Assert;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class DynamicProperties_stepDefinition extends DynamicProperties_pom {
+public class DynamicProperties_stepDefinition extends DynamicProperties_page {
     @Given("user clicks Dynamic Properties button")
     public void userClicksDynamicPropertiesButton() {
         BrowserUtils.setupDemoqaMenu("Elements");

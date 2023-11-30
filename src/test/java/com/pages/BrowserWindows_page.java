@@ -1,12 +1,12 @@
-package com.pom;
+package com.pages;
 
 import com.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class BrowserWindows_pom {
-    public BrowserWindows_pom(){
+public class BrowserWindows_page {
+    public BrowserWindows_page(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
     @FindBy(xpath = "//span[.='Browser Windows']")

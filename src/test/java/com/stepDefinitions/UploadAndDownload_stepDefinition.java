@@ -1,6 +1,6 @@
 package com.stepDefinitions;
 
-import com.pom.UploadAndDownload_pom;
+import com.pages.UploadAndDownload_page;
 import com.utilities.BrowserUtils;
 import com.utilities.Driver;
 import io.cucumber.java.en.And;
@@ -9,11 +9,8 @@ import io.cucumber.java.en.Then;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class UploadAndDownload_stepDefinition extends UploadAndDownload_pom {
+public class UploadAndDownload_stepDefinition extends UploadAndDownload_page {
     @Given("user clicks Upload and Download button")
     public void userClicksUploadAndDownloadButton() {
         BrowserUtils.setupDemoqaMenu("Elements");

@@ -1,19 +1,16 @@
 package com.stepDefinitions;
 
-import com.pom.TextBox_pom;
+import com.pages.TextBox_page;
 import com.utilities.BrowserUtils;
 import com.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.junit.Assert.assertEquals;
 
 
-public class TextBox_stepDefinition extends TextBox_pom {
+public class TextBox_stepDefinition extends TextBox_page {
     @Given("user clicks Text Box button")
     public void userClicksTextBoxButton() {
         BrowserUtils.setupDemoqaMenu("Elements");

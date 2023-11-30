@@ -1,6 +1,6 @@
 package com.stepDefinitions;
 
-import com.pom.NestedFrames_pom;
+import com.pages.NestedFrames_page;
 import com.utilities.BrowserUtils;
 import com.utilities.Driver;
 import io.cucumber.java.en.And;
@@ -8,7 +8,7 @@ import io.cucumber.java.en.Given;
 import org.junit.Assert;
 
 
-public class NestedFrames_stepDefinition  extends NestedFrames_pom {
+public class NestedFrames_stepDefinition  extends NestedFrames_page {
     @Given("kullanıcı nestedFrames sayfasına gider")
     public void kullanıcı_nested_frames_sayfasına_gider() {
         BrowserUtils.setupDemoqaMenu("Alerts, Frame & Windows");
