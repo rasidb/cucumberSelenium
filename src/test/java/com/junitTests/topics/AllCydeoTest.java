@@ -3,35 +3,34 @@ package com.junitTests.topics;
 import com.utilities.BrowserUtils;
 import com.utilities.Driver;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-
-
 class AllCydeoTest {
-    @Before
-    public void init() {
+    @BeforeAll
+    public static void init() {
         Driver.getDriver().get("https://practice.cydeo.com/");
     }
 
-    //  @DisplayName("add and delete elements")
+    @DisplayName("add and delete elements")
     @Test
     void addAndDeleteElements() {
         Driver.getDriver().findElement(By.linkText("Add/Remove Elements")).click();
         WebElement addBtn = Driver.getDriver().findElement(By.xpath("//button[.='Add Element']"));
         By deleteBy = By.xpath("//button[.='Delete']");
         List<WebElement> deleteButtons = Driver.getDriver().findElements(deleteBy);
-        assertEquals(0, deleteButtons.size());
+        Assertions.assertEquals(0, deleteButtons.size());
         addBtn.click();
         addBtn.click();
         addBtn.click();
         deleteButtons = Driver.getDriver().findElements(deleteBy);
-        assertEquals(3, deleteButtons.size());
+        Assertions.assertEquals(3, deleteButtons.size());
         for (WebElement deleteButton : deleteButtons) {
             deleteButton.click();
         }
@@ -58,7 +57,7 @@ class AllCydeoTest {
         }
         Driver.getDriver().findElement(By.xpath("//input[@value='Submit']")).click();
         String result = Driver.getDriver().findElement(By.id("result")).getText();
-        assertEquals("You selected: Turkey", result);
+        Assertions.assertEquals("You selected: Turkey", result);
 
     }
 

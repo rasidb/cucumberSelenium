@@ -7,7 +7,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import org.junit.Assert;
+
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -39,7 +40,7 @@ public class Alerts_stepDefinition extends Alerts_page {
     public void aConfirmBoxShouldAppearWithTheMessage(String arg0) {
         confirmButton.click();
         Driver.getDriver().switchTo().alert().dismiss();
-        Assert.assertEquals(arg0, confirmResult.getText());
+        Assertions.assertEquals(arg0, confirmResult.getText());
     }
 
     @Then("a prompt box should appear with the message {string}")
@@ -47,6 +48,6 @@ public class Alerts_stepDefinition extends Alerts_page {
         promtButton.click();
         Driver.getDriver().switchTo().alert().sendKeys("rasid");
         Driver.getDriver().switchTo().alert().accept();
-        Assert.assertEquals(expected, promptResult.getText());
+        Assertions.assertEquals(expected, promptResult.getText());
     }
 }

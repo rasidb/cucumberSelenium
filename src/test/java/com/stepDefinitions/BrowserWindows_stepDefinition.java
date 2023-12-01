@@ -6,7 +6,7 @@ import com.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 
 
 import java.util.Set;
@@ -30,7 +30,7 @@ public class BrowserWindows_stepDefinition extends BrowserWindows_page {
         windowHandles.remove(mainPage);
         for (String windowHandle : windowHandles) {
             Driver.getDriver().switchTo().window(windowHandle);
-            Assert.assertEquals("This is a sample page",tabWindowText.getText());
+            Assertions.assertEquals("This is a sample page",tabWindowText.getText());
             Driver.getDriver().close();
         }
         Driver.getDriver().switchTo().window(mainPage);
@@ -39,7 +39,7 @@ public class BrowserWindows_stepDefinition extends BrowserWindows_page {
         newWindow.click();
         for (String windowHandle : windowHandles) {
             Driver.getDriver().switchTo().window(windowHandle);
-            Assert.assertEquals("This is a sample page",newWindow.getText());
+            Assertions.assertEquals("This is a sample page",newWindow.getText());
             Driver.getDriver().close();
         }
     }

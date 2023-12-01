@@ -5,8 +5,7 @@ import com.utilities.BrowserUtils;
 import com.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 
 
 import java.util.concurrent.TimeUnit;
@@ -29,8 +28,8 @@ public class AutoComplete_stepDefinition extends AutoComplete_page {
         multipleFirstSelect.click();
         autoCompleteMultipleInput.sendKeys(secColor);
         multipleFirstSelect.click();
-        Assert.assertEquals(firstColor, firstMultiCheckText.getText());
-        Assert.assertEquals(secColor, secMultiCheckText.getText());
+        Assertions.assertEquals(firstColor, firstMultiCheckText.getText());
+        Assertions.assertEquals(secColor, secMultiCheckText.getText());
     }
 
     @And("write {string} in single box")
@@ -38,7 +37,7 @@ public class AutoComplete_stepDefinition extends AutoComplete_page {
         autoCompleteSingleInput.sendKeys(color);
         BrowserUtils.scrollByJs(singleSelectFirst);
         singleSelectFirst.click();
-        Assert.assertEquals(color, singleTextCheck.getText());
+        Assertions.assertEquals(color, singleTextCheck.getText());
     }
 
 

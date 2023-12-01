@@ -7,7 +7,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
-import org.junit.Assert;
+
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 
 public class UploadAndDownload_stepDefinition extends UploadAndDownload_page {
@@ -34,7 +35,7 @@ public class UploadAndDownload_stepDefinition extends UploadAndDownload_page {
 
     @Then("checks that the file is uploaded")
     public void checksThatTheFileIsUploaded() {
-        Assert.assertTrue(uploadedFilePath.isDisplayed());
+        Assertions.assertTrue(uploadedFilePath.isDisplayed());
     }
 
 

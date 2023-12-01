@@ -1,8 +1,9 @@
 package com.junitTests.topics;
 
 import com.utilities.Driver;
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -10,9 +11,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
-public class DakikadaKackelime {
+class DakikadaKackelime {
     @Test
-    public void kacKelime() {
+ void kacKelime() {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         //fast fingers sitesine git
         Driver.getDriver().get("https://10fastfingers.com/typing-test/turkish");
@@ -52,7 +53,7 @@ public class DakikadaKackelime {
                 }
             }
         }
-        Assert.assertTrue(true);
+        Assertions.assertTrue(true);
         Driver.closeDriver();
     }
 }

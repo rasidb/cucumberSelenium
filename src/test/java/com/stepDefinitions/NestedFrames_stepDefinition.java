@@ -5,7 +5,7 @@ import com.utilities.BrowserUtils;
 import com.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 
 
 public class NestedFrames_stepDefinition  extends NestedFrames_page {
@@ -18,13 +18,13 @@ public class NestedFrames_stepDefinition  extends NestedFrames_page {
     @And("ilk frameye içindeki {string} yazısının varlığını doğrular")
     public void ilkFrameyeIçindekiYazısınınVarlığınıDoğrular(String parentFrameText) {
         Driver.getDriver().switchTo().frame(parentFrame);
-        Assert.assertTrue(frameText.isDisplayed());
-        Assert.assertEquals(parentFrameText,frameText.getText());
+        Assertions.assertTrue(frameText.isDisplayed());
+        Assertions.assertEquals(parentFrameText,frameText.getText());
     }
 
     @And("nested frame içindeki {string} yazısını doğrular")
     public void nestedFrameIçindekiYazısınıDoğrular(String innerFrameText) {
         Driver.getDriver().switchTo().frame(innerFrame);
-        Assert.assertEquals(innerFrameText,frameText.getText());
+        Assertions.assertEquals(innerFrameText,frameText.getText());
     }
 }

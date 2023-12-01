@@ -8,7 +8,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import org.junit.Assert;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -17,6 +17,9 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
+
 
 public class PracticeForm_stepDefinition extends PracticeForm_page {
 
@@ -37,10 +40,10 @@ public class PracticeForm_stepDefinition extends PracticeForm_page {
         lastName.sendKeys(lastNameStr);
         userEmail.sendKeys(userMailStr);
         Driver.getDriver().findElement(By.xpath("//label[.='Male']")).click();
-        Assert.assertTrue(maleGender.isSelected());
+        assertTrue(maleGender.isSelected());
         Driver.getDriver().findElement(By.xpath("//label[.='Female']")).click();
-        Assert.assertTrue(femaleGender.isSelected());
-        Assert.assertFalse(maleGender.isSelected());
+        assertTrue(femaleGender.isSelected());
+        assertFalse(maleGender.isSelected());
         userNumber.sendKeys(userNumberStr);
         BrowserUtils.scrollByJs(dateOfBirthInput);
         dateOfBirthInput.click();
@@ -53,9 +56,9 @@ public class PracticeForm_stepDefinition extends PracticeForm_page {
         wait.until(ExpectedConditions.elementToBeClickable(sportsElement)).click();
         Driver.getDriver().findElement(By.xpath("//label[.='Reading']")).click();
         Driver.getDriver().findElement(By.xpath("//label[.='Music']")).click();
-        Assert.assertTrue(hobbies_sports.isSelected());
-        Assert.assertTrue(hobbies_reading.isSelected());
-        Assert.assertTrue(hobbies_music.isSelected());
+        assertTrue(hobbies_sports.isSelected());
+        assertTrue(hobbies_reading.isSelected());
+        assertTrue(hobbies_music.isSelected());
         uploadPicture.sendKeys("C:\\Users\\Noob\\Desktop\\Adsız.png");
         BrowserUtils.scrollByJs(currentAddress);
         currentAddress.sendKeys("siwas"+ Keys.TAB+"NCR"+Keys.TAB+"Noida"+Keys.TAB+Keys.ENTER);
@@ -64,14 +67,14 @@ public class PracticeForm_stepDefinition extends PracticeForm_page {
     @Then("submits the form")
     public void submitsTheForm() {
         List<WebElement> checkElements = Driver.getDriver().findElements(By.xpath("(//tbody//tr)//td[2]"));
-        Assert.assertEquals(firstNameStr+" "+lastNameStr,checkElements.get(0).getText());
-        Assert.assertEquals(userMailStr,checkElements.get(1).getText());
-        Assert.assertEquals("Female",checkElements.get(2).getText());
-        Assert.assertEquals(userNumberStr,checkElements.get(3).getText());
-        Assert.assertEquals("09 May,1999",checkElements.get(4).getText());
-        Assert.assertEquals("Sports, Reading, Music",checkElements.get(6).getText());
-        Assert.assertEquals("Adsız.png",checkElements.get(7).getText());
-        Assert.assertEquals("siwas",checkElements.get(8).getText());
+        assertEquals(firstNameStr+" "+lastNameStr,checkElements.get(0).getText());
+        assertEquals(userMailStr,checkElements.get(1).getText());
+        assertEquals("Female",checkElements.get(2).getText());
+        assertEquals(userNumberStr,checkElements.get(3).getText());
+        assertEquals("09 May,1999",checkElements.get(4).getText());
+        assertEquals("Sports, Reading, Music",checkElements.get(6).getText());
+        assertEquals("Adsız.png",checkElements.get(7).getText());
+        assertEquals("siwas",checkElements.get(8).getText());
 
     }
 }

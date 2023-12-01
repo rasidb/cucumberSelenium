@@ -2,27 +2,28 @@ package com.junitTests.topics;
 
 import com.utilities.Driver;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static org.junit.Assert.assertEquals;
 
 public class WaitTests {
 
-    @Before
+    @BeforeAll
     public static void init() {
         // Navigate to the practice website
         Driver.getDriver().get("https://practice.cydeo.com/");
     }
 
 
-    //@DisplayName("Handle WebDriverWait class")
+    @DisplayName("Handle WebDriverWait class")
     @Test
     void testWaitForElementToDisappear() {
         // Navigate to the Dynamic Controls page
@@ -39,11 +40,11 @@ public class WaitTests {
 
         // Verify the success message
         WebElement message = Driver.getDriver().findElement(By.id("message"));
-        Assert.assertTrue(message.isDisplayed());
-        assertEquals("It's gone!", message.getText());
+        Assertions.assertTrue(message.isDisplayed());
+        Assertions.assertEquals("It's gone!", message.getText());
     }
 
-    //@DisplayName("Enable and Disable the TextBox")
+    @DisplayName("Enable and Disable the TextBox")
     @Test
     void testEnableAndDisableTextBox() {
         // Navigate to the Dynamic Controls page
@@ -69,11 +70,11 @@ public class WaitTests {
             textBar.sendKeys("deniz askk");
 
             // Assertion for success
-            Assert.assertTrue(true);
+            Assertions.assertTrue(true);
         }
     }
 
-   // @DisplayName("Example 1: Element on Page Hidden and Becomes Visible After Trigger")
+   @DisplayName("Example 1: Element on Page Hidden and Becomes Visible After Trigger")
     @Test
     void testHiddenElementBecomesVisible() {
         // Navigate to the Dynamic Loading page
@@ -102,11 +103,11 @@ public class WaitTests {
 
         // Verify the error message
         WebElement assertText = Driver.getDriver().findElement(By.id("flash"));
-        Assert.assertEquals("Your username is invalid!\n" +
+        Assertions.assertEquals("Your username is invalid!\n" +
                 "×", assertText.getText());
     }
 
-  //  @DisplayName("Example 2: Element on the Page Rendered After the Trigger")
+    @DisplayName("Example 2: Element on the Page Rendered After the Trigger")
     @Test
     void testRenderedElementAfterTrigger() {
         // Navigate to the Dynamic Loading page
@@ -127,6 +128,6 @@ public class WaitTests {
         String finishText = Driver.getDriver().findElement(By.xpath("//div[@id='finish']//h4")).getText();
 
         // Verify the text of the rendered element
-        assertEquals("Hello World!", finishText);
+        Assertions.assertEquals("Hello World!", finishText);
     }
 }

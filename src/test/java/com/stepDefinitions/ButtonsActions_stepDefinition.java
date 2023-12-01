@@ -6,8 +6,8 @@ import com.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import org.junit.Assert;
 
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -31,9 +31,9 @@ public class ButtonsActions_stepDefinition extends ButtonsActions_page {
         WebElement doubleClickMessage = Driver.getDriver().findElement(By.id("doubleClickMessage"));
         WebElement rightClickMessage = Driver.getDriver().findElement(By.id("rightClickMessage"));
         WebElement dynamicClickMessage = Driver.getDriver().findElement(By.id("dynamicClickMessage"));
-        Assert.assertTrue(doubleClickMessage.isDisplayed());
-        Assert.assertTrue(rightClickMessage.isDisplayed());
-        Assert.assertTrue(dynamicClickMessage.isDisplayed());
+        Assertions.assertTrue(doubleClickMessage.isDisplayed());
+        Assertions.assertTrue(rightClickMessage.isDisplayed());
+        Assertions.assertTrue(dynamicClickMessage.isDisplayed());
     }
 
 

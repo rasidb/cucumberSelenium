@@ -1,8 +1,8 @@
 package com.stepDefinitions;
-import com.utilities.BrowserUtils;
+
 import com.utilities.Driver;
 import io.cucumber.java.*;
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
