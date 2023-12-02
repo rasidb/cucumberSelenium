@@ -4,4 +4,3 @@ Feature:
     Given user clicks Check Box button
     And select boxes
     Then  assert all informations
-

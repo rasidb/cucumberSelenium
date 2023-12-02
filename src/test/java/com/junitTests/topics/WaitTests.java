@@ -3,29 +3,30 @@ package com.junitTests.topics;
 import com.utilities.Driver;
 
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 
 public class WaitTests {
 
-    @BeforeAll
-    public static void init() {
+    @Before
+    public void init() {
         // Navigate to the practice website
         Driver.getDriver().get("https://practice.cydeo.com/");
     }
 
 
-    @DisplayName("Handle WebDriverWait class")
     @Test
-    void testWaitForElementToDisappear() {
+    public void testWaitForElementToDisappear() {
         // Navigate to the Dynamic Controls page
         Driver.getDriver().findElement(By.linkText("Dynamic Controls")).click();
 
@@ -40,13 +41,13 @@ public class WaitTests {
 
         // Verify the success message
         WebElement message = Driver.getDriver().findElement(By.id("message"));
-        Assertions.assertTrue(message.isDisplayed());
-        Assertions.assertEquals("It's gone!", message.getText());
+        assertTrue(message.isDisplayed());
+      assertEquals("It's gone!", message.getText());
     }
 
-    @DisplayName("Enable and Disable the TextBox")
+
     @Test
-    void testEnableAndDisableTextBox() {
+    public void testEnableAndDisableTextBox() {
         // Navigate to the Dynamic Controls page
         Driver.getDriver().findElement(By.linkText("Dynamic Controls")).click();
 
@@ -70,13 +71,13 @@ public class WaitTests {
             textBar.sendKeys("deniz askk");
 
             // Assertion for success
-            Assertions.assertTrue(true);
+           assertTrue(true);
         }
     }
 
-   @DisplayName("Example 1: Element on Page Hidden and Becomes Visible After Trigger")
+
     @Test
-    void testHiddenElementBecomesVisible() {
+    public void testHiddenElementBecomesVisible() {
         // Navigate to the Dynamic Loading page
         Driver.getDriver().findElement(By.linkText("Dynamic Loading")).click();
 
@@ -103,13 +104,13 @@ public class WaitTests {
 
         // Verify the error message
         WebElement assertText = Driver.getDriver().findElement(By.id("flash"));
-        Assertions.assertEquals("Your username is invalid!\n" +
+assertEquals("Your username is invalid!\n" +
                 "×", assertText.getText());
     }
 
-    @DisplayName("Example 2: Element on the Page Rendered After the Trigger")
+
     @Test
-    void testRenderedElementAfterTrigger() {
+    public void testRenderedElementAfterTrigger() {
         // Navigate to the Dynamic Loading page
         Driver.getDriver().findElement(By.linkText("Dynamic Loading")).click();
 
@@ -128,6 +129,6 @@ public class WaitTests {
         String finishText = Driver.getDriver().findElement(By.xpath("//div[@id='finish']//h4")).getText();
 
         // Verify the text of the rendered element
-        Assertions.assertEquals("Hello World!", finishText);
+  assertEquals("Hello World!", finishText);
     }
 }

@@ -16,11 +16,11 @@ public class Hooks {
         }
         Driver.closeDriver();
     }
+
     @After
-    public void afterClass(){
-
+    public void afterClass() {
+        Driver.closeDriver();
     }
-
 
 
 }

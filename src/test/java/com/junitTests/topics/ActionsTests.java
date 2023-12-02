@@ -3,10 +3,9 @@ package com.junitTests.topics;
 import com.utilities.Driver;
 
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -14,16 +13,15 @@ import org.openqa.selenium.interactions.Actions;
 public class ActionsTests {
     public static Actions actions;
 
-    @BeforeAll
-    public static void init() {
+    @Before
+    public void init() {
         // Navigate to the practice website
         Driver.getDriver().get("https://practice.cydeo.com/");
         actions = new Actions(Driver.getDriver());
     }
 
-    @DisplayName("Drag and Drop Test")
     @Test
-     void dragAndDropTest() {
+    public void dragAndDropTest() {
 
         // Click on the "Drag and Drop" link
         Driver.getDriver().findElement(By.linkText("Drag and Drop")).click();
@@ -31,7 +29,7 @@ public class ActionsTests {
         // Find the first column and its header
         WebElement firstColumn = Driver.getDriver().findElement(By.xpath("//div[@class='column']"));
         WebElement firstColumnText = firstColumn.findElement(By.xpath(".//header"));
-        Assertions.assertEquals("A", firstColumnText.getText());
+        Assert.assertEquals("A", firstColumnText.getText());
 
         // Find the second column
         WebElement secondColumn = Driver.getDriver().findElement(By.id("column-b"));
@@ -43,12 +41,12 @@ public class ActionsTests {
         // After drag and drop, check the text in the first column header
         firstColumn = Driver.getDriver().findElement(By.xpath("//div[@class='column']"));
         firstColumnText = firstColumn.findElement(By.xpath(".//header"));
-        Assertions.assertEquals("B", firstColumnText.getText());
+        Assert.assertEquals("B", firstColumnText.getText());
     }
 
-   @DisplayName("Move the small circle to the big circle")
+
     @Test
-     void dragAndDropCircles() {
+    public void dragAndDropCircles() {
         // Navigate to the Drag and Drop Circles page
         Driver.getDriver().findElement(By.linkText("Drag and Drop Circles")).click();
 
@@ -60,6 +58,6 @@ public class ActionsTests {
         actions.dragAndDrop(smallCircle, bigCircle).perform();
 
         // Verify the result
-        Assertions.assertEquals("You did great!", bigCircle.getText());
+        Assert.assertEquals("You did great!", bigCircle.getText());
     }
 }

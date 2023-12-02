@@ -7,7 +7,9 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.jupiter.api.Assertions;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 
 public class Frames_stepDefinition extends Frames_page {
@@ -25,12 +27,12 @@ public class Frames_stepDefinition extends Frames_page {
 
     @Then("I should see {string} inside the iframe")
     public void ıShouldSeeInsideTheIframe(String expectedText) {
-        Assertions.assertEquals(expectedText,textFromInnerFrame.getText());
+      assertEquals(expectedText,textFromInnerFrame.getText());
     }
 
     @And("I switch back to the main iframe")
     public void ıSwitchBackToTheMainIframe() {
     Driver.getDriver().switchTo().defaultContent();
-    Assertions.assertTrue(framesPage.isDisplayed());
+    assertTrue(framesPage.isDisplayed());
     }
 }

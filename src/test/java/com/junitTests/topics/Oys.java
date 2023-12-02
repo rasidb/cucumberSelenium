@@ -4,7 +4,8 @@ import com.utilities.BrowserUtils;
 import com.utilities.ConfigurationReader;
 import com.utilities.Driver;
 
-import org.junit.jupiter.api.Test;
+
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -15,9 +16,9 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 
-class Oys {
+public class Oys {
     @Test
-    void kodluBakımlar() {
+    public void kodluBakımlar() {
         Driver.getDriver().manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 60);
         Driver.getDriver().get("https://portal.teias.gov.tr/my.policy");

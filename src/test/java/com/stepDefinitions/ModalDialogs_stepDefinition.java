@@ -5,7 +5,8 @@ import com.utilities.BrowserUtils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.jupiter.api.Assertions;
+
+import static org.junit.Assert.assertEquals;
 
 
 public class ModalDialogs_stepDefinition extends ModalDialogs_page {
@@ -23,7 +24,7 @@ public class ModalDialogs_stepDefinition extends ModalDialogs_page {
 
     @Then("the small modal should be displayed")
     public void theSmallModalShouldBeDisplayed() {
-        Assertions.assertEquals("Small Modal",smallModalBody.getText());
+   assertEquals("Small Modal",smallModalBody.getText());
         closeSmallModal.click();
     }
 
@@ -34,7 +35,7 @@ public class ModalDialogs_stepDefinition extends ModalDialogs_page {
 
     @Then("the large modal should be displayed")
     public void theLargeModalShouldBeDisplayed() {
-    Assertions.assertEquals("Large Modal",largeModelText.getText());
+    assertEquals("Large Modal",largeModelText.getText());
    closeLargeModal.click();
     }
 
